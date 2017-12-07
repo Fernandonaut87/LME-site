@@ -1,0 +1,68 @@
+
+<html>
+    <head>
+        <script src="./moonpatrol.js" type="text/javascript"></script>
+
+    </head>
+
+	<audio id="audio">
+	    <source src="i_am_the_doctor.ogg" type="audio/ogg">
+	    <source src="i_am_the_doctor.mp3" type="audio/mpeg">
+	    
+	</audio>
+	 
+	<div>
+	    <a href="#" onclick="play()">Play</a> 
+	    <a href="#" onclick="pause()">Pause</a>
+	    <a href="#" onclick="stop()">Stop</a>
+	</div>
+	 
+	<div>
+	    <a href="#" onclick="aumentar_volume()"> + volume</a>
+	    <a href="#" onclick="diminuir_volume()"> - volume</a>
+	    <a href="#" onclick="mute()"> Mute</a>
+	</div>
+	 
+	<script>
+	    audio = document.getElementById('audio');
+	 
+	    function play(){
+	        audio.play();
+	    }
+	 
+	    function pause(){
+	        audio.pause();
+	    }
+	 
+	    function stop(){
+	        audio.pause();
+	        audio.currentTime = 0;
+	    }
+	 
+	    function aumentar_volume(){
+	        if( audio.volume < 1)  audio.volume += 0.1;
+	    }
+	 
+	    function diminuir_volume(){
+	        if( audio.volume > 0)  audio.volume -= 0.1;
+	    }
+	         
+	    function mute(){
+	        if( audio.muted ){
+	            audio.muted = false;
+	        }else{
+	            audio.muted = true;
+	        }
+	    }
+
+	    
+	</script>
+
+
+
+    <body>
+        <h2> Alien Invasion </h2>
+        <canvas id="canvas" width="800" height="600"/>
+
+    </body>
+</html>
